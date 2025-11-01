@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Авторизация by Rias Glitch</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="main-container">
+      <!-- левая панелька -->
+      <div class="side-panel left">
+        <div class="panel-content">
+          <!-- добавить текст или иконки мб потом -->
+        </div>
+      </div>
+
+      <!-- центр  панелька -->
+      <div class="center-panel">
+        <div class="auth-container">
+          <div class="container">
+            <h1>by Rias Glitch</h1>
+
+            <div class="auth-form">
+              <input
+                type="text"
+                id="username"
+                placeholder="Логин"
+                class="auth-input"
+              />
+              <input
+                type="password"
+                id="password"
+                placeholder="Введи пароль"
+                class="auth-input"
+              />
+              <button onclick="login()">Welcome</button>
+              <button onclick="register()" class="register-btn">
+                Create account
+              </button>
+            </div>
+
+            <div id="authMessage" class="message"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- правая панелька -->
+      <div class="side-panel right">
+        <div class="panel-content">
+          <!-- добавить текст или иконки НЕ ЗАБЫТЬ хотя хз (дальнейший апгрейд) -->
+        </div>
+      </div>
+    </div>
+
+    <script src="auth.js"></script>
+  </body>
+</html>

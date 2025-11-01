@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TON Coin</title>
+    <link rel="stylesheet" href="style2.css" />
+    <!--  чутка да это позаимствовал(помогла гпт)-->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  </head>
+  <body>
+    <div class="background"></div>
+
+    <class="container">
+      <div class="header">
+        <div class="user-info">
+          Привет, <span id="currentUser">Трейдер</span>!
+          <button onclick="logout()" class="logout-btn">Выйти</button>
+        </div>
+      </div>
+
+      <div class="main-grid">
+        <!-- левые таблицы -->
+        <div class="left-column">
+          <div class="price-card">
+            <h1>💎 TON Coin</h1>
+            <div class="price">$<span id="tonPrice">2.15</span></div>
+            <div class="change change-positive">+1.5%</div>
+            <div class="update-time">
+              Обновлено: <span id="lastUpdate">12:00:00</span>
+            </div>
+          </div>
+
+          <div class="calculator-card">
+            <h3>💰 Калькулятор</h3>
+            <div class="calculator">
+              <div class="input-row">
+                <label>USD</label>
+                <input
+                  type="number"
+                  id="usdInput"
+                  value="100"
+                  oninput="calculateTon()"
+                />
+              </div>
+              <div class="swap-btn">⇄</div>
+              <div class="input-row">
+                <label>TON</label>
+                <input type="number" id="tonInput" oninput="calculateUsd()" />
+              </div>
+            </div>
+            <div class="result" id="calculationResult">
+              100.00 USD = 46.51 TON
+            </div>
+          </div>
+        </div>
+
+        <!-- правая колонка -->
+        <div class="right-column">
+          <!-- график -->
+          <div class="chart-card">
+            <h3>📊 График TON/USDT</h3>
+            <div class="chart-container">
+              <canvas id="priceChart"></canvas>
+            </div>
+          </div>
+
+          <!-- статистика -->
+          <div class="stats-container">
+            <div class="stats-grid">
+              <div class="stat-item">
+                <div class="stat-label">Изменение 24ч</div>
+                <div class="stat-value change-positive">+2.9%</div>
+              </div>
+              <div class="stat-item">
+                <div class="stat-label">Объем 24ч</div>
+                <div class="stat-value">$1.98M</div>
+              </div>
+              <div class="stat-item">
+                <div class="stat-label">Макс. цена</div>
+                <div class="stat-value">$2.07</div>
+              </div>
+              <div class="stat-item">
+                <div class="stat-label">Мин. цена</div>
+                <div class="stat-value">$1.92</div>
+              </div>
+            </div>
+          </div>
+
+          <!--рамка для тг хз пойдет вроде-->
+<a href="https://t.me/mamontstyle" class="tg-link" target="_blank">
+    <div class="tg-placeholder">
+        <div class="tg-icon">📢</div>
+        <div class="tg-text">Telegram канал</div>
+        <div class="tg-subtext">Перейти в канал</div>
+    </div>
+</a>
+
+    <script src="script.js"></script>
+  </body>
+</html>

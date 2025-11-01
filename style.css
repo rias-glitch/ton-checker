@@ -1,0 +1,271 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+/* бэкграунд всей страницы линк нерабочий '' добавить */
+body {
+  font-family: 'Arial', sans-serif;
+  background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
+    url(https://img.decrypt.co/insecure/rs::3840:0:0:0/plain/https://cdn.decrypt.co/wp-content/uploads/2024/06/Toncoin_shuttersfittock_2433172413-gID_7.jpg@webp')
+      center/cover no-repeat fixed;
+  color: white;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+/* Контейнер для всей страницы с тянками по бокам */
+.main-container {
+  display: flex;
+  width: 100%;
+  max-width: 1400px;
+  height: 600px;
+  background: rgba(30, 30, 30, 0.9);
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
+}
+
+/* боковые панели */
+.side-panel {
+  flex: 1;
+  min-width: 250px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.side-panel.left {
+  background: linear-gradient(rgba(18, 172, 75, 0.4), rgba(0, 0, 0, 0.5)),
+    url('https://img.decrypt.co/insecure/rs:fit:3840:0:0:0/plain/https://cdn.decrypt.co/wp-content/uploads/2024/06/Toncoin_shutterstock_2433172413-gID_7.jpg@webp')
+      center/cover no-repeat;
+}
+
+.side-panel.right {
+  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+    url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQptkg-SXSIMw38nnazpuhHXXTIFTdmNUi1LA&s');
+}
+
+/* анимки для боковых панелей */
+.side-panel::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    45deg,
+    rgba(255, 107, 107, 0.1),
+    rgba(55, 66, 250, 0.1)
+  );
+  animation: shimmer 3s ease-in-out infinite alternate;
+}
+
+@keyframes shimmer {
+  0% {
+    opacity: 0.3;
+  }
+  100% {
+    opacity: 0.7;
+  }
+}
+
+/* центральная панель с формой */
+.center-panel {
+  flex: 0 0 500px;
+  background: linear-gradient(rgba(45, 45, 45, 0.8), rgba(45, 45, 45, 0.9)),
+    url('https://www.icegif.com/wp-content/uploads/2025/06/catgirl-icegif-11.gif')
+      center/cover no-repeat;
+  padding: 50px 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  backdrop-filter: blur(3px);
+  border-left: 2px solid rgba(255, 107, 107, 0.3);
+  border-right: 2px solid rgba(55, 66, 250, 0.3);
+  position: relative;
+}
+
+.center-panel::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+
+.center-panel > * {
+  position: relative;
+  z-index: 2;
+}
+
+.auth-container {
+  animation: fadeIn 0.8s ease-in-out;
+}
+
+.container {
+  width: 100%;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 40px;
+  color: #636d69;
+  font-size: 2.5em;
+  text-shadow: 0 2px 10px rgba(255, 107, 107, 0.3);
+  animation: float 3s ease-in-out infinite;
+}
+
+/* стили для авторизации */
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  margin-bottom: 25px;
+}
+
+.auth-input {
+  padding: 18px 22px;
+  border: 2px solid #404040;
+  border-radius: 12px;
+  background: rgba(64, 64, 64, 0.8);
+  color: rgb(75, 73, 73);
+  font-size: 16px;
+  transition: all 0.3s ease;
+}
+
+.auth-input:focus {
+  outline: none;
+  border-color: #454749;
+  background: rgba(64, 64, 64, 1);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(77, 75, 75, 0.3);
+}
+
+.auth-input::placeholder {
+  color: #aaa;
+  font-style: italic;
+}
+
+button {
+  padding: 18px 25px;
+  border: none;
+  border-radius: 12px;
+  background: #444546;
+  color: white;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+button:hover {
+  background: #514f4f;
+  transform: translateY(-3px);
+  box-shadow: 0 12px 25px rgba(199, 231, 19, 0.4);
+}
+
+.register-btn {
+  background: #cacbd957;
+}
+
+.register-btn:hover {
+  background: #474749;
+  box-shadow: 0 12px 25px rgba(186, 125, 64, 0.4);
+}
+
+.message {
+  padding: 18px;
+  text-align: center;
+  border-radius: 12px;
+  margin-top: 20px;
+  font-weight: bold;
+  animation: slideDown 0.3s ease-out;
+}
+
+.message.error {
+  background: rgba(11, 147, 226, 0.9);
+  color: white;
+}
+
+.message.success {
+  background: rgba(21, 155, 233, 0.9);
+  color: white;
+}
+
+/* анимочки */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* адптивность от нейро */
+@media (max-width: 1200px) {
+  .side-panel {
+    display: none;
+  }
+
+  .center-panel {
+    flex: 1;
+    border: none;
+  }
+
+  .main-container {
+    max-width: 500px;
+    height: auto;
+    min-height: 500px;
+  }
+}
+
+@media (max-width: 600px) {
+  .center-panel {
+    padding: 30px 20px;
+  }
+
+  h1 {
+    font-size: 2em;
+  }
+
+  .auth-input,
+  button {
+    padding: 15px 20px;
+  }
+}
